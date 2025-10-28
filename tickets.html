@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets | TicketFlow</title>
+  <link rel="stylesheet" href="./tickets.css" />
+  <script src="https://kit.fontawesome.com/d079352595.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div id="logo">
+      <i class="fa fa-ticket" aria-hidden="true"></i>
+      <h2>TicketFlow</h2>
+    </div>
+    <ul id="navigation">
+      <li><a href="./dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="./tickets.html">Tickets</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="ticket-container">
+    <h1>🎫 My Tickets</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ticketTableBody">
+        <!-- Filled dynamically -->
+      </tbody>
+    </table>
+
+    <button id="createTicketBtn" class="create-ticket">+ Create New Ticket</button>
+  </main>
+
+  <!-- Ticket Modal -->
+<div id="ticketModal" class="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle">Create Ticket</h2>
+    <form id="ticketForm">
+      <div class="form-group">
+        <label for="ticketTitle">Title</label>
+        <input type="text" id="ticketTitle" placeholder="Enter ticket title" required />
+      </div>
+      <div class="form-group">
+        <label for="ticketStatus">Status</label>
+        <select id="ticketStatus">
+          <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Closed">Closed</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" id="saveTicketBtn">Save</button>
+        <button type="button" id="cancelBtn" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <footer>
+    <p>© 2025 TicketFlow | All Rights Reserved</p>
+  </footer>
+
+  <script src="./tickets.js"></script>
+</body>
+</html>

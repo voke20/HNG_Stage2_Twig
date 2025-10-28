@@ -1,0 +1,194 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f6f3f3;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fa-ticket {
+  color: purple;
+  font-size: 1.8rem;
+}
+
+#logo h2 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+#navigation {
+  display: flex;
+  gap: 20px;
+}
+
+#navigation li {
+  list-style: none;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#navigation .active {
+background: purple;
+  color: white;
+}
+
+#navigation a:hover{
+    border-bottom: 2px solid purple;
+}
+
+.ticket-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.ticket-container h1 {
+  text-align: center;
+  color: purple;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.status.open { background: orange; }
+.status.progress { background: royalblue; }
+.status.closed { background: green; }
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: purple;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: indigo;
+}
+
+/* === Modal Styles === */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: purple;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#saveTicketBtn {
+  background: purple;
+  color: #fff;
+}
+
+#cancelBtn {
+  background: #ddd;
+}
+
+#cancelBtn:hover {
+  background: #bbb;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #555;
+}

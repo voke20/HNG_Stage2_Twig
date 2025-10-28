@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | TicketFlow</title>
+  <link rel="stylesheet" href="./signup.css" />
+  <script src="https://kit.fontawesome.com/d079352595.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="toast" class="toast hidden">
+        <span id="toast-message"></span>
+        <button onclick="hideToast()">&times;</button>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div id="logo">
+                <i class="fa fa-ticket" aria-hidden="true"></i>
+                <h2>TicketFlow</h2>
+            </div>
+            <ul id="navigation">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./signup.html" class="active">Sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-container">
+            <div class="form">
+                <h2 id="formTitle">Create Account</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">Start managing tickets today</p>
+
+                <form id="authForm">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter your first name"/>
+                        <p class="error" id="firstName-error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter your last name"/>
+                        <p class="error" id="lastName-error"></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="Enter your email"/>
+                        <p class="error" id="email-error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Enter your password"/>
+                        <p class="error" id="password-error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="••••••••" />
+                        <p class="error" id="confirmPassword-error"></p>
+                    </div>
+
+                    <button type="submit" id="submitBtn">Create Account</button>
+                </form>
+
+                <p class="toggle-text">
+                    Already have an account?
+                    <a href="./login.html"><span id="toggleLink">Login</span></a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <section class="design">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+    </section>
+
+    <script src="./signup.js"></script>
+</body>
+</html>

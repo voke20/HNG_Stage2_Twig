@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | TicketFlow</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://kit.fontawesome.com/d079352595.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div id="logo">
+      <i class="fa fa-ticket" aria-hidden="true"></i>
+      <h2>TicketFlow</h2>
+    </div>
+    <ul id="navigation">
+      <li><a href="./dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="./tickets.html">Tickets</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="dashboard-container">
+    <section class="welcome">
+      <h1>👋 Welcome Back!</h1>
+      <p>Here’s an overview of your ticket activities.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card open">
+        <i class="fa fa-folder-open"></i>
+        <h3>Open Tickets</h3>
+        <p>12</p>
+      </div>
+      <div class="stat-card progress">
+        <i class="fa fa-spinner"></i>
+        <h3>In Progress</h3>
+        <p>5</p>
+      </div>
+      <div class="stat-card closed">
+        <i class="fa fa-check-circle"></i>
+        <h3>Closed</h3>
+        <p>8</p>
+      </div>
+    </section>
+
+    <section class="recent-tickets">
+      <h2>Recent Tickets</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1234</td>
+            <td>Printer not working</td>
+            <td><span class="status open">Open</span></td>
+            <td>20/10/2025</td>
+          </tr>
+          <tr>
+            <td>#1235</td>
+            <td>Network issue</td>
+            <td><span class="status progress">In Progress</span></td>
+            <td>22/10/2025</td>
+          </tr>
+          <tr>
+            <td>#1236</td>
+            <td>Login error</td>
+            <td><span class="status closed">Closed</span></td>
+            <td>23/10/2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <button class="create-ticket">+ Create New Ticket</button>
+  </main>
+
+  <footer>
+    <p>© 2025 TicketFlow | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("ticketapp_session");
+      window.location.href = "login.html";
+    });
+  </script>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
