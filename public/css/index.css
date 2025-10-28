@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f6f3f3;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fa-ticket {
+  color: purple;
+  font-size: 1.8rem;
+}
+
+#logo h2 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+#navigation {
+  display: flex;
+  gap: 20px;
+}
+
+#navigation li {
+  list-style: none;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#navigation .active {
+background: purple;
+  color: white;
+}
+
+#navigation a:hover{
+    border-bottom: 2px solid purple;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 20px;
+  max-width: 1400px;
+  margin:  0 50px;
+  overflow: hidden;
+  background: #f9f0ff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(95, 95, 95, 0.1);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.hero-content {
+    margin-bottom: 200px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #3b0066;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.button .btn1,
+.button .btn2 {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn1 {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: purple;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px;
+}
+
+.btn1:hover {
+    background: #f9f0ff;
+    border: 2px solid purple;
+    transform: translateY(-5px) ;
+    color: purple;
+}
+
+.btn2 {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid purple;
+    transition: background 0.3s ease, color 0.3s ease;
+    color: purple;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn2:hover {
+    background: purple;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* WAVY BACKGROUND */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  animation: waveMove 5s ease-in-out infinite alternate;
+}
+
+/* FLOATING CIRCLES */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(107, 4, 107, 0.1);
+  z-index: -2;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 150px;
+  height: 150px;
+  top: 80px;
+  left: 100px;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  bottom: 300px;
+  right: 120px;
+  animation-delay: 3s;
+}
+
+.circle3 {
+  width: 100px;
+  height: 100px;
+  top: 80px;
+  right: 120px;
+  animation-delay: 2s;
+}
+
+/* FEATURES SECTION */
+.choose {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 30px;
+    margin: 10px 20px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.reason h2 {
+  color: #3b0066;
+  font-size: 2rem;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f6f3f3;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+/* ANIMATIONS */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .circle1, .circle2 {
+    opacity: 0.3;
+    transform: scale(0.6);
+  }
+
+  .feature-grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle1, .circle2 {
+    display: none;
+  }
+}

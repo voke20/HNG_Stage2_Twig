@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard - TicketFlow{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar">
+        <div id="logo">
+            <i class="fa fa-ticket" aria-hidden="true"></i>
+            <h2>TicketFlow</h2>
+        </div>
+        <ul id="navigation">
+            <li><a href="{{ path('dashboard') }}" {% if current_page is defined and current_page == 'dashboard' %}class="active"{% endif %}>Dashboard</a></li>
+            <li><a href="{{ path('tickets') }}" {% if current_page is defined and current_page == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
+            <li><a href="{{ path('logout') }}" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <section class="welcome">
+        <h1>👋 Welcome Back, {{ app.user.firstName }}!</h1>
+        <p>Here's an overview of your ticket activities.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card open">
+            <i class="fa fa-folder-open"></i>
+            <h3>Open Tickets</h3>
+            <p>{{ stats.open }}</p>
+        </div>
+        <div class="stat-card progress">
+            <i class="fa fa-spinner"></i>
+            <h3>In Progress</h3>
+            <p>{{ stats.inProgress }}</p>
+        </div>
+        <div class="stat-card closed">
+            <i class="fa fa-check-circle"></i>
+            <h3>Closed</h3>
+            <p>{{ stats.closed }}</p>
+        </div>
+    </section>
+
+    <section class="recent-tickets">
+        <h2>Recent Tickets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in recentTickets %}
+                    <tr>
+                        <td>#{{ ticket.id }}</td>
+                        <td>{{ ticket.title }}</td>
+                        <td><span class="status {{ ticket.status|lower }}">{{ ticket.status }}</span></td>
+                        <td>{{ ticket.createdAt|date('d/m/Y') }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center">No tickets found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <a href="{{ path('ticket_create') }}" class="create-ticket">+ Create New Ticket</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/dashboard.js') }}"></script>
+{% endblock %}

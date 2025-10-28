@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+
+# If the request is for a real directory or file, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Otherwise, redirect everything to index.php
+RewriteRule ^ index.php [QSA,L]
+
+# Serve static files from the public directory
+RewriteRule ^public/(.*)$ public/$1 [L]

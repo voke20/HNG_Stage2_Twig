@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home - TicketFlow{% endblock %}
+
+{% block main_class %}hero{% endblock %}
+
+{% block content %}
+    <section class="hero-content">
+        <h1>Simplify Your Tickets Management</h1>
+        <p>Create, track and resolve tickets effortlessly</p>
+        <div class="button">
+            <a href="{{ path('signup') }}" class="btn1">Get Started</a>
+            <a href="{{ path('login') }}" class="btn2">Login</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#d1bbea" fill-opacity="1"
+                d="M0,160L80,170.7C160,181,320,203,480,186.7C640,171,800,117,960,128C1120,139,1280,213,1360,250.7L1440,288L1440,320L0,320Z">
+            </path>
+        </svg>
+    </section>
+
+    <section class="reason">
+        <h2>Why Choose TicketFlow</h2>
+        <div class="choose">
+            {% for feature in features %}
+                <div class="feature">
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f6f3f3;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ADD TOAST STYLES */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.toast.error {
+  background: #f44336;
+}
+
+.toast button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.toast.hidden {
+  display: none;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fa-ticket {
+  color: purple;
+  font-size: 1.8rem;
+}
+
+#logo h2 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+#navigation {
+  display: flex;
+  gap: 20px;
+}
+
+#navigation li {
+  list-style: none;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#navigation .active {
+  background: purple;
+  color: white;
+}
+
+#navigation a:hover {
+  border-bottom: 2px solid purple;
+}
+
+/* HERO SECTION */
+.auth-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.design {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.form {
+  position: relative;
+  background-color: #fff;
+  margin: 10px auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+.form h2 {
+  margin-bottom: 1.5rem;
+  color: purple;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: purple;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: purple;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  background: transparent;
+  border: 2px solid purple;
+  color: purple;
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(107, 4, 107, 0.1);
+  z-index: -2;
+}    
+
+.circle1 {
+  width: 150px;
+  height: 150px;
+  top: 80px;
+  left: 100px;
+  animation-delay: 0s;
+  animation: float 9s ease-in-out infinite;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  top: 450px;
+  right: 150px;
+  animation-delay: 2s;
+  animation: float2 9s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(90px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-90px); }
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
